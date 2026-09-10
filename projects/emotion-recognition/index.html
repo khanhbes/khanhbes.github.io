@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09080d">
+  <meta name="description" content="EVision — cross-platform facial emotion recognition with YOLOv12, real-time web inference, an emotion-aware AI chatbot and private on-device Android processing.">
+  <meta property="og:title" content="EVision — Cross-platform Emotion Recognition">
+  <meta property="og:description" content="A research-led emotion recognition experience for web and Android.">
+  <meta property="og:image" content="../../assets/images/projects/emotion-recognition/realtime-chatbot.png">
+  <meta property="og:type" content="website">
+  <title>EVision — Cross-platform Emotion Recognition</title>
+  <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../violation-detect/style.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../../" aria-label="Back to projects">
+      <span class="brand-mark">K</span><span>KhanhBes</span>
+    </a>
+    <nav class="header-nav" aria-label="Project navigation">
+      <a href="#overview">Overview</a>
+      <a href="#model">Model</a>
+      <a href="#web">Web</a>
+      <a href="#android">Android</a>
+    </nav>
+    <a class="header-back" href="../../">All projects <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero emotion-hero" id="top" aria-labelledby="project-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> AI research case study · 2025</p>
+        <h1 id="project-title">Machines that read the <em>human signal.</em></h1>
+        <p class="hero-lede">EVision detects facial emotions across web and Android—combining YOLOv12, real-time interaction and private on-device inference.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#results">Explore the research <span aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" href="https://github.com/khanhbes/Emotion-Recognition-YOLOv12" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-delay="120">
+        <div class="visual-status"><i></i> Emotion-aware interaction</div>
+        <img src="../../assets/images/projects/emotion-recognition/realtime-chatbot.png" alt="EVision real-time emotion detection and AI chatbot interface" width="2855" height="1353">
+        <div class="visual-caption"><span>01 / Live perception</span><strong>Happy · 83% confidence</strong></div>
+      </div>
+      <div class="hero-index" aria-hidden="true">02</div>
+    </section>
+
+    <section class="project-strip" aria-label="Project summary">
+      <div><span>Project</span><strong>EVision</strong></div>
+      <div><span>Core model</span><strong>YOLOv12s</strong></div>
+      <div><span>Platforms</span><strong>Web + Android</strong></div>
+      <div><span>Research code</span><strong>CN.NC.SV.24.20</strong></div>
+    </section>
+
+    <section class="section intro" id="overview">
+      <div class="section-label reveal"><span>01</span> The challenge</div>
+      <div class="intro-content reveal">
+        <h2>Emotion recognition that moves beyond a single screen.</h2>
+        <div class="intro-columns">
+          <p>Facial expressions are a rich non-verbal signal, but real-world recognition must handle changing light, pose, image noise, multiple faces and visually similar emotional states.</p>
+          <p>EVision treats the model as one layer in a complete experience: image, video and live-camera analysis on the web, plus private TensorFlow Lite inference on Android.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics" id="results" aria-label="Research results">
+      <article class="metric reveal"><strong data-count="8821">0</strong><span>dataset images</span></article>
+      <article class="metric reveal" data-delay="80"><strong data-count="8">0</strong><span>emotion classes</span></article>
+      <article class="metric reveal" data-delay="160"><strong data-count="93.7" data-decimals="1" data-suffix="%">0</strong><span>precision</span></article>
+      <article class="metric metric-accent reveal" data-delay="240"><strong data-count="94.1" data-decimals="1" data-suffix="%">0</strong><span>mAP50</span></article>
+    </section>
+
+    <section class="section system" id="model">
+      <div class="section-label reveal"><span>02</span> Model & data</div>
+      <div class="system-heading reveal">
+        <h2>Eight expressions. One real-time detector.</h2>
+        <p>Faces were manually boxed and labeled, normalized to 640 × 640, then augmented for rotation, brightness, exposure, blur and noise.</p>
+      </div>
+
+      <div class="emotion-spectrum reveal" aria-label="Eight emotion classes">
+        <span>Anger</span><span>Contempt</span><span>Disgust</span><span>Fear</span>
+        <span>Happy</span><span>Neutral</span><span>Sad</span><span>Surprised</span>
+      </div>
+
+      <div class="pipeline reveal" aria-label="Research and deployment pipeline">
+        <div class="pipeline-step"><b>01</b><span>Collect</span><small>8,821 facial images</small></div><div class="pipeline-arrow">→</div>
+        <div class="pipeline-step"><b>02</b><span>Annotate</span><small>Faces · boxes · labels</small></div><div class="pipeline-arrow">→</div>
+        <div class="pipeline-step"><b>03</b><span>Train</span><small>YOLOv12s · 120 epochs</small></div><div class="pipeline-arrow">→</div>
+        <div class="pipeline-step"><b>04</b><span>Serve</span><small>Flask · Socket.IO</small></div><div class="pipeline-arrow">→</div>
+        <div class="pipeline-step"><b>05</b><span>Optimize</span><small>ONNX · TensorFlow Lite</small></div>
+      </div>
+    </section>
+
+    <section class="section benchmark">
+      <div class="section-heading reveal">
+        <div class="section-label"><span>03</span> Model comparison</div>
+        <p>Same research dataset · small model variants</p>
+      </div>
+      <div class="benchmark-layout">
+        <div class="benchmark-copy reveal">
+          <h2>YOLOv12 leads under stricter evaluation.</h2>
+          <p>Across five YOLO generations, YOLOv12s delivered the strongest mAP50 and mAP50–95 while keeping the model compact at 9.26 million parameters.</p>
+        </div>
+        <div class="model-table reveal" data-delay="100" role="table" aria-label="YOLO model comparison">
+          <div class="table-row table-head" role="row"><span>Model</span><span>Params</span><span>mAP50</span><span>mAP50–95</span></div>
+          <div class="table-row selected" role="row"><strong>YOLOv12s</strong><span>9.26M</span><span>94.1%</span><span>85.1%</span></div>
+          <div class="table-row" role="row"><strong>YOLOv11s</strong><span>9.46M</span><span>93.5%</span><span>83.3%</span></div>
+          <div class="table-row" role="row"><strong>YOLOv10s</strong><span>8.04M</span><span>93.5%</span><span>81.3%</span></div>
+          <div class="table-row" role="row"><strong>YOLOv9s</strong><span>7.29M</span><span>93.6%</span><span>80.7%</span></div>
+          <div class="table-row" role="row"><strong>YOLOv8s</strong><span>11.14M</span><span>90.9%</span><span>74.1%</span></div>
+        </div>
+      </div>
+      <figure class="training-figure reveal">
+        <img src="../../assets/images/projects/emotion-recognition/training-curves.png" alt="YOLO emotion detector training and validation curves" loading="lazy">
+        <figcaption><span>Training diagnostics</span><strong>Loss convergence and validation metrics across late-stage epochs.</strong></figcaption>
+      </figure>
+    </section>
+
+    <section class="section showcase" id="experience">
+      <div class="section-heading reveal">
+        <div class="section-label"><span>04</span> Cross-platform experience</div>
+        <p>One model · two deployment paths</p>
+      </div>
+
+      <article class="showcase-row showcase-web" id="web">
+        <div class="showcase-copy reveal">
+          <p class="kicker">Browser experience / Web</p>
+          <h3>Four ways to understand a moment.</h3>
+          <p>The Flask interface supports image upload, webcam capture, video recording and continuous recognition over WebSocket—with a confidence control for tuning results.</p>
+          <ul class="feature-list">
+            <li>Image and multi-face detection</li>
+            <li>Live webcam inference with Socket.IO</li>
+            <li>Downloadable annotated results</li>
+          </ul>
+        </div>
+        <div class="browser-frame reveal" data-delay="100">
+          <div class="browser-bar"><i></i><i></i><i></i><span>EVision / image intelligence</span></div>
+          <img src="../../assets/images/projects/emotion-recognition/web-upload.png" alt="EVision web interface detecting emotions in a group photo" loading="lazy">
+        </div>
+      </article>
+
+      <article class="showcase-row chatbot-row">
+        <div class="chatbot-visual reveal">
+          <img src="../../assets/images/projects/emotion-recognition/realtime-chatbot.png" alt="EVision webcam recognition paired with an emotion-aware chatbot" loading="lazy">
+        </div>
+        <div class="showcase-copy reveal" data-delay="120">
+          <p class="kicker">Emotion-aware AI / Gemini</p>
+          <h3>A conversation tuned to how you feel.</h3>
+          <p>EVision aggregates detected emotion during the opening seconds, then gives Gemini 1.5 Pro the context to adapt its tone. The chatbot responds in Vietnamese or English through the same real-time channel.</p>
+          <ul class="feature-list">
+            <li>Context from the dominant detected emotion</li>
+            <li>Vietnamese and English responses</li>
+            <li>Live chat synchronized by WebSocket</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="showcase-row android-row">
+        <div class="android-phones reveal">
+          <img src="../../assets/images/projects/emotion-recognition/android-gallery.jpg" alt="EVision Android gallery emotion detection" loading="lazy">
+          <img src="../../assets/images/projects/emotion-recognition/android-camera.jpg" alt="EVision Android camera emotion detection" loading="lazy">
+        </div>
+        <div class="showcase-copy reveal" id="android" data-delay="120">
+          <p class="kicker">Private inference / Android</p>
+          <h3>Recognition stays on the device.</h3>
+          <p>The PyTorch model travels through ONNX and TensorFlow SavedModel to a float32 TensorFlow Lite build. Flutter runs inference locally with four CPU threads, while isolates keep the interface responsive.</p>
+          <ul class="feature-list">
+            <li>Gallery, camera and video analysis</li>
+            <li>640 × 640 local preprocessing</li>
+            <li>On-device NMS and result rendering</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section evaluation">
+      <div class="section-label reveal"><span>05</span> Evaluation</div>
+      <div class="evaluation-grid">
+        <div class="evaluation-copy reveal">
+          <h2>Strong results—with the hard cases made visible.</h2>
+          <p>Evaluation covered 917 images and 2,820 face instances. Contempt and Sad were among the strongest classes; Happy and Neutral remained harder to localize precisely because expressions vary and overlap.</p>
+          <p class="method-note">Reported results use the paper’s Table 4.1 and Table 4.2. Training ran for 120 epochs at 640 × 640 with batch size 32 on Tesla T4 and P100 environments.</p>
+        </div>
+        <div class="scoreboard reveal" data-delay="120">
+          <div><span>Precision</span><strong>93.7%</strong></div>
+          <div><span>Recall</span><strong>89.8%</strong></div>
+          <div><span>mAP50</span><strong>94.1%</strong></div>
+          <div><span>mAP50–95</span><strong>85.1%</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="future-band">
+      <div class="section-label reveal"><span>06</span> Next direction</div>
+      <div class="future-copy reveal">
+        <h2>From expression labels to more natural interaction.</h2>
+        <p>Future work targets difficult expressions, lighting and occlusion robustness, iOS support, an Android chatbot and voice-based interaction. Emotion inference should support—not replace—human judgment in sensitive contexts.</p>
+      </div>
+    </section>
+
+    <section class="next-step reveal">
+      <p class="eyebrow"><span></span> Research & implementation</p>
+      <h2>Explore EVision in depth.</h2>
+      <p>Read the full 38-page report or inspect the web, Flutter and model-conversion source.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://github.com/khanhbes/Emotion-Recognition-YOLOv12/blob/main/Paper/CN.NC.SV.24.20.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a>
+        <a class="button button-ghost" href="https://github.com/khanhbes/Emotion-Recognition-YOLOv12" target="_blank" rel="noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="../../"><span class="brand-mark">K</span><span>KhanhBes</span></a>
+    <p>EVision · Cross-platform emotion recognition</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="../violation-detect/script.js"></script>
+</body>
+</html>

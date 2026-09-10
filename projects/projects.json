@@ -5,7 +5,7 @@
     "image": "emotion-recognition",
     "category": "ai",
     "links": {
-      "view": "https://github.com/khanhbes/Emotion-Recognition-YOLOv12",
+      "view": "./emotion-recognition/",
       "code": "https://github.com/khanhbes/Emotion-Recognition-YOLOv12"
     },
     "details": "Giới thiệu:\nMột hệ thống Computer Vision nhận diện cảm xúc khuôn mặt theo thời gian thực sử dụng kiến trúc YOLOv12, thiết kế để cân bằng giữa tốc độ suy luận và độ chính xác, phù hợp triển khai trên thiết bị Edge hoặc server giám sát.\n\nĐiểm nổi bật kỹ thuật:\n- Áp dụng YOLOv12 để phát hiện khuôn mặt nhanh và ổn định, sau đó đưa ra nhãn cảm xúc bằng mô-đun phân loại nhẹ.\n- Tối ưu hoá inference: chuyển đổi sang ONNX và tối ưu với TensorRT/FP16 khi cần để giảm độ trễ trên GPU/Edge.\n- Pipeline xử lý video real-time với OpenCV, hỗ trợ batching và tăng tốc bằng CUDA.\n- Thiết kế để dễ dàng tích hợp với hệ thống theo dõi nhiều đối tượng (tracking) và lọc nhiễu bằng kỹ thuật lọc temporal.\n\nCông nghệ:\nPython, PyTorch, YOLOv12, OpenCV, ONNX, TensorRT, CUDA, NumPy\n\nLink:\nCode & tài liệu: https://github.com/khanhbes/Emotion-Recognition-YOLOv12"
