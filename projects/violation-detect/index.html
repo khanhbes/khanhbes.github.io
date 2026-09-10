@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08090c">
+  <meta name="theme-color" content="#f4f3ef">
   <meta name="description" content="VNeTraffic — an end-to-end AI traffic violation detection system for Vietnam, built with instance segmentation, multi-object tracking, a web dashboard and a Flutter mobile app.">
   <meta property="og:title" content="VNeTraffic — AI Traffic Violation Detection">
   <meta property="og:description" content="A research-led, end-to-end traffic enforcement platform for Vietnam.">
@@ -27,13 +27,14 @@
     <nav class="header-nav" aria-label="Project navigation">
       <a href="#overview">Overview</a>
       <a href="#system">System</a>
-      <a href="#experience">Experience</a>
+      <a href="#web">Web</a>
+      <a href="#mobile">Mobile</a>
     </nav>
     <a class="header-back" href="../../">All projects <span aria-hidden="true">↗</span></a>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="project-title">
+    <section class="hero" id="top" aria-labelledby="project-title">
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-copy reveal">
         <p class="eyebrow"><span></span> Research case study · 2025</p>
@@ -41,7 +42,7 @@
         <p class="hero-lede">VNeTraffic turns camera feeds into traceable violation records—connecting instance segmentation, multi-object tracking, evidence review and citizen-facing workflows in one system.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#demo">Watch the project <span aria-hidden="true">↓</span></a>
-          <a class="button button-ghost" href="https://github.com/khanhbes/Violation-Detect" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+          <a class="button button-ghost" href="#system">Explore the system <span aria-hidden="true">↘</span></a>
         </div>
       </div>
 
@@ -122,7 +123,9 @@
         <div class="pipeline-arrow" aria-hidden="true">→</div>
         <div class="pipeline-step"><b>03</b><span>Apply logic</span><small>6 rule-based modules</small></div>
         <div class="pipeline-arrow" aria-hidden="true">→</div>
-        <div class="pipeline-step"><b>04</b><span>Review & notify</span><small>Firebase · Flutter</small></div>
+        <div class="pipeline-step"><b>04</b><span>Serve & store</span><small>FastAPI · Firebase</small></div>
+        <div class="pipeline-arrow" aria-hidden="true">→</div>
+        <div class="pipeline-step"><b>05</b><span>Review & resolve</span><small>Web · Flutter · FCM</small></div>
       </div>
 
       <div class="violations reveal">
@@ -144,7 +147,7 @@
         <p>Designed for operators and road users</p>
       </div>
 
-      <article class="showcase-row showcase-web">
+      <article class="showcase-row showcase-web" id="web">
         <div class="showcase-copy reveal">
           <p class="kicker">Control room / Web</p>
           <h3>Monitor, review and manage in real time.</h3>
@@ -166,7 +169,7 @@
           <img src="../../assets/images/projects/violation-detect/mobile-notification.png" alt="VNeTraffic mobile violation notification screens" loading="lazy">
           <img src="../../assets/images/projects/violation-detect/mobile-payment-appeal.png" alt="VNeTraffic mobile payment and appeal screens" loading="lazy">
         </div>
-        <div class="showcase-copy reveal" data-delay="120">
+        <div class="showcase-copy reveal" id="mobile" data-delay="120">
           <p class="kicker">Citizen services / Mobile</p>
           <h3>Clear next steps, right in the driver’s hand.</h3>
           <p>The Flutter app closes the loop with Firebase-powered notifications, evidence viewing, fine payment and a transparent appeal workflow.</p>
@@ -197,11 +200,11 @@
     </section>
 
     <section class="next-step reveal">
-      <p class="eyebrow"><span></span> Explore the working prototype</p>
-      <h2>See the system in motion.</h2>
-      <p>Open the interactive frontend demo or explore the complete source, architecture and setup guide.</p>
+      <p class="eyebrow"><span></span> Research & implementation</p>
+      <h2>Go deeper into the system.</h2>
+      <p>Review the complete research report or explore the source, architecture and local setup guide.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="https://khanhbes.github.io/Violation-Detect/" target="_blank" rel="noreferrer">Open live demo <span aria-hidden="true">↗</span></a>
+        <a class="button button-primary" href="https://github.com/khanhbes/Violation-Detect/blob/main/Project%20info/KH.NC.SV.25_56.pdf" target="_blank" rel="noreferrer">Read the report <span aria-hidden="true">↗</span></a>
         <a class="button button-ghost" href="https://github.com/khanhbes/Violation-Detect" target="_blank" rel="noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
       </div>
     </section>
