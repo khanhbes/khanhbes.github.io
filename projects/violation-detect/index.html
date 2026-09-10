@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090c">
+  <meta name="description" content="VNeTraffic — an end-to-end AI traffic violation detection system for Vietnam, built with instance segmentation, multi-object tracking, a web dashboard and a Flutter mobile app.">
+  <meta property="og:title" content="VNeTraffic — AI Traffic Violation Detection">
+  <meta property="og:description" content="A research-led, end-to-end traffic enforcement platform for Vietnam.">
+  <meta property="og:image" content="../../assets/images/projects/violation-detect/web-realtime.png">
+  <meta property="og:type" content="website">
+  <title>VNeTraffic — AI Traffic Violation Detection</title>
+  <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../../" aria-label="Back to projects">
+      <span class="brand-mark">K</span>
+      <span>KhanhBes</span>
+    </a>
+    <nav class="header-nav" aria-label="Project navigation">
+      <a href="#overview">Overview</a>
+      <a href="#system">System</a>
+      <a href="#experience">Experience</a>
+    </nav>
+    <a class="header-back" href="../../">All projects <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="project-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Research case study · 2025</p>
+        <h1 id="project-title">Traffic intelligence,<br><em>built for Vietnam.</em></h1>
+        <p class="hero-lede">VNeTraffic turns camera feeds into traceable violation records—connecting instance segmentation, multi-object tracking, evidence review and citizen-facing workflows in one system.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#demo">Watch the project <span aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" href="https://github.com/khanhbes/Violation-Detect" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-delay="120">
+        <div class="visual-status"><i></i> Live inference</div>
+        <img src="../../assets/images/projects/violation-detect/web-realtime.png" alt="VNeTraffic real-time monitoring interface detecting road users" width="1600" height="900">
+        <div class="visual-caption">
+          <span>01 / Detection</span>
+          <strong>Instance-aware monitoring</strong>
+        </div>
+      </div>
+
+      <div class="hero-index" aria-hidden="true">01</div>
+    </section>
+
+    <section class="project-strip" aria-label="Project summary">
+      <div><span>Role</span><strong>AI / Full-stack</strong></div>
+      <div><span>Core model</span><strong>YOLOv26s-seg</strong></div>
+      <div><span>Tracking</span><strong>ByteTrack</strong></div>
+      <div><span>Platforms</span><strong>Web + Mobile</strong></div>
+    </section>
+
+    <section class="section intro" id="overview">
+      <div class="section-label reveal"><span>01</span> The challenge</div>
+      <div class="intro-content reveal">
+        <h2>From detecting vehicles to understanding violations.</h2>
+        <div class="intro-columns">
+          <p>Vietnamese roads combine dense, mixed traffic with complex lane behavior. A useful system must do more than draw boxes: it needs to preserve identity across frames, interpret road context and produce evidence that people can review.</p>
+          <p>This research builds a closed-loop platform around that challenge—from camera input and AI inference to violation records, notifications, payment and appeals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Research results">
+      <article class="metric reveal">
+        <strong data-count="4482">0</strong>
+        <span>training images</span>
+      </article>
+      <article class="metric reveal" data-delay="80">
+        <strong data-count="47039">0</strong>
+        <span>instance annotations</span>
+      </article>
+      <article class="metric reveal" data-delay="160">
+        <strong data-count="40">0</strong>
+        <span>object classes</span>
+      </article>
+      <article class="metric metric-accent reveal" data-delay="240">
+        <strong data-count="86.9" data-decimals="1" data-suffix="%">0</strong>
+        <span>box mAP50</span>
+      </article>
+    </section>
+
+    <section class="section demo" id="demo">
+      <div class="section-heading reveal">
+        <div class="section-label"><span>02</span> Project film</div>
+        <p>70 seconds · product walkthrough</p>
+      </div>
+      <div class="video-shell reveal">
+        <video controls preload="metadata" playsinline poster="../../assets/images/projects/violation-detect/web-dashboard.png">
+          <source src="../../assets/images/projects/violation-detect/project-demo.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="video-note"><span>VNeTraffic</span><span>Research prototype / 2025</span></div>
+      </div>
+    </section>
+
+    <section class="section system" id="system">
+      <div class="section-label reveal"><span>03</span> How it works</div>
+      <div class="system-heading reveal">
+        <h2>One continuous path from pixels to resolution.</h2>
+        <p>A modular pipeline keeps perception, violation rules and citizen services independent—making each layer easier to test and extend.</p>
+      </div>
+
+      <div class="pipeline reveal" aria-label="System processing pipeline">
+        <div class="pipeline-step"><b>01</b><span>Camera input</span><small>RTSP · webcam · video</small></div>
+        <div class="pipeline-arrow" aria-hidden="true">→</div>
+        <div class="pipeline-step"><b>02</b><span>Segment & track</span><small>YOLOv26s-seg · ByteTrack</small></div>
+        <div class="pipeline-arrow" aria-hidden="true">→</div>
+        <div class="pipeline-step"><b>03</b><span>Apply logic</span><small>6 rule-based modules</small></div>
+        <div class="pipeline-arrow" aria-hidden="true">→</div>
+        <div class="pipeline-step"><b>04</b><span>Review & notify</span><small>Firebase · Flutter</small></div>
+      </div>
+
+      <div class="violations reveal">
+        <p class="violations-title">Six violation modules</p>
+        <ul>
+          <li><span>01</span>No helmet</li>
+          <li><span>02</span>Red light</li>
+          <li><span>03</span>Sidewalk</li>
+          <li><span>04</span>Lane misuse</li>
+          <li><span>05</span>Wrong way</li>
+          <li><span>06</span>Traffic sign</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section showcase" id="experience">
+      <div class="section-heading reveal">
+        <div class="section-label"><span>04</span> Product experience</div>
+        <p>Designed for operators and road users</p>
+      </div>
+
+      <article class="showcase-row showcase-web">
+        <div class="showcase-copy reveal">
+          <p class="kicker">Control room / Web</p>
+          <h3>Monitor, review and manage in real time.</h3>
+          <p>The FastAPI dashboard supports live camera streams over WebSocket, recorded-video analysis and evidence management without breaking the operator’s flow.</p>
+          <ul class="feature-list">
+            <li>Live multi-object detection and tracking</li>
+            <li>Image and video upload workflows</li>
+            <li>Violation records and evidence review</li>
+          </ul>
+        </div>
+        <div class="browser-frame reveal" data-delay="100">
+          <div class="browser-bar"><i></i><i></i><i></i><span>VNeTraffic / dashboard</span></div>
+          <img src="../../assets/images/projects/violation-detect/web-upload.jpeg" alt="VNeTraffic web upload and analysis interface" loading="lazy">
+        </div>
+      </article>
+
+      <article class="showcase-row showcase-mobile">
+        <div class="phones reveal">
+          <img src="../../assets/images/projects/violation-detect/mobile-notification.png" alt="VNeTraffic mobile violation notification screens" loading="lazy">
+          <img src="../../assets/images/projects/violation-detect/mobile-payment-appeal.png" alt="VNeTraffic mobile payment and appeal screens" loading="lazy">
+        </div>
+        <div class="showcase-copy reveal" data-delay="120">
+          <p class="kicker">Citizen services / Mobile</p>
+          <h3>Clear next steps, right in the driver’s hand.</h3>
+          <p>The Flutter app closes the loop with Firebase-powered notifications, evidence viewing, fine payment and a transparent appeal workflow.</p>
+          <ul class="feature-list">
+            <li>Real-time push notifications</li>
+            <li>VietQR / SePay payment journey</li>
+            <li>Evidence-backed appeal submission</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section evaluation">
+      <div class="section-label reveal"><span>05</span> Evaluation</div>
+      <div class="evaluation-grid">
+        <div class="evaluation-copy reveal">
+          <h2>Balanced accuracy and real-time performance.</h2>
+          <p>After 150 training epochs, the segmentation model reached strong detection and mask quality while preserving the throughput needed for live monitoring.</p>
+          <p class="method-note">Benchmark reported on NVIDIA A100. The 7.2 ms figure measures inference only; complete system latency also depends on decoding, tracking, networking and storage.</p>
+        </div>
+        <div class="scoreboard reveal" data-delay="120">
+          <div><span>Box mAP50</span><strong>86.9%</strong></div>
+          <div><span>Mask mAP50</span><strong>85.5%</strong></div>
+          <div><span>Inference</span><strong>7.2 ms</strong></div>
+          <div><span>Throughput</span><strong>~139 FPS</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-step reveal">
+      <p class="eyebrow"><span></span> Explore the working prototype</p>
+      <h2>See the system in motion.</h2>
+      <p>Open the interactive frontend demo or explore the complete source, architecture and setup guide.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://khanhbes.github.io/Violation-Detect/" target="_blank" rel="noreferrer">Open live demo <span aria-hidden="true">↗</span></a>
+        <a class="button button-ghost" href="https://github.com/khanhbes/Violation-Detect" target="_blank" rel="noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="../../"><span class="brand-mark">K</span><span>KhanhBes</span></a>
+    <p>AI Traffic Violation Detection · Research case study</p>
+    <a href="#project-title">Back to top ↑</a>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

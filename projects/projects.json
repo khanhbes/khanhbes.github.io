@@ -16,7 +16,7 @@
     "image": "violation-detect",
     "category": "ai",
     "links": {
-      "view": "https://github.com/khanhbes/Violation-Detect",
+      "view": "./violation-detect/",
       "code": "https://github.com/khanhbes/Violation-Detect"
     },
     "details": "Giới thiệu:\nHệ thống giám sát giao thông tự động phát hiện các hành vi vi phạm như vượt đèn đỏ và không đội mũ bảo hiểm, kết hợp giữa mô hình phát hiện đối tượng và cơ chế tracking để xác định hành vi theo ngữ cảnh. Hệ thống đồng bộ sự kiện lên ứng dụng di động để cảnh báo và quản lý vi phạm.\n\nĐiểm nổi bật kỹ thuật:\n- Cơ chế hiệu chuẩn vùng (ví dụ: '5-second calibration') để xác định các vùng tĩnh như vạch dừng hoặc ranh giới làm tăng độ chính xác khi đánh dấu vi phạm.\n- Kết hợp YOLO cho detect và thuật toán Multiple-Object Tracking (MOT) để theo dõi cá thể qua nhiều khung hình, tránh trùng lặp sự kiện.\n- Pipeline song song: AI inference trên backend, lưu sự kiện vào cơ sở dữ liệu, và gửi push notification thời gian thực qua Firebase Cloud Messaging tới app Flutter.\n- Thiết kế có thể đóng gói bằng Docker để triển khai trên server hoặc thiết bị biên.\n\nCông nghệ:\nPython, YOLO (object detection), Multi-Object Tracking (MOT), OpenCV, Flask/FastAPI, Flutter, Firebase (FCM), Docker\n\nLink:\nCode & tài liệu: https://github.com/khanhbes/Violation-Detect"
