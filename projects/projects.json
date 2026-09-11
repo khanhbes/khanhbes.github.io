@@ -27,7 +27,7 @@
     "image": "vinfast-battery",
     "category": "iot",
     "links": {
-      "view": "https://github.com/khanhbes/Vinfast-Batery",
+      "view": "./vinfast-battery/",
       "code": "https://github.com/khanhbes/Vinfast-Batery"
     },
     "details": "Giới thiệu:\nGiải pháp theo dõi telemetry và phân tích sức khỏe pin dành cho xe máy điện VinFast Feliz Neo 2025. Gồm module phần cứng đọc dữ liệu từ hệ thống BMS, kênh truyền dữ liệu đến backend và giao diện di động để trực quan hóa và cảnh báo.\n\nĐiểm nổi bật kỹ thuật:\n- Giao tiếp phần cứng tùy chỉnh (ví dụ: CAN/Serial) để thu thập thông số SOH, SOC, điện áp ô tô, và dữ liệu chu kỳ sạc.\n- Phân tích sức khỏe pin và dự đoán chu kỳ sạc bằng các phương pháp thống kê/heuristic; cảnh báo khi phát hiện bất thường về nhiệt độ hoặc suy giảm hiệu năng.\n- Ứng dụng di động Flutter với biểu đồ thời gian thực, lịch sử telemetry và thông báo tức thì khi xảy ra bất thường.\n- Thiết kế hỗ trợ đồng bộ hoá dữ liệu trên nền tảng cloud hoặc lưu cục bộ khi ngoại tuyến.\n\nCông nghệ:\nFlutter, Dart, Embedded firmware (C/C++), MQTT/HTTP, Firebase/SQLite, Python cho phân tích dữ liệu\n\nLink:\nCode & tài liệu: https://github.com/khanhbes/Vinfast-Batery"
