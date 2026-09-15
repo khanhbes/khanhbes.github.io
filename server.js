@@ -23,6 +23,10 @@ app.get('/experience', (req, res) => {
   res.sendFile(path.join(__dirname, 'experience', 'index.html'));
 });
 
+app.get('/certificates', (req, res) => {
+  res.sendFile(path.join(__dirname, 'certificates', 'index.html'));
+});
+
 app.get('/vinfast-battery', (req, res) => {
   res.sendFile(path.join(__dirname, 'vinfast-battery', 'index.html'));
 });

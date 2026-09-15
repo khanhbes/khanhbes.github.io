@@ -14,8 +14,8 @@
     "highlightMetric": "Excellence",
     "metricLabel": "Graduation Capstone 2026",
     "description": "Conferred for outstanding innovation, technical execution, and real-world impact.",
-    "proofUrl": "https://www.is.vnu.edu.vn/",
-    "proofLabel": "View Decision",
+    "proofUrl": "/assets/certificates/best-graduation-project-award.png",
+    "proofLabel": "View Award Cert",
     "credentialId": "Council Decision 2026"
   },
   {
@@ -33,8 +33,8 @@
     "highlightMetric": "174 / 200",
     "metricLabel": "Listening 50/50 · Reading 50/50 (CEFR C)",
     "description": "CEFR B2 certified with perfect 50/50 scores in both Listening and Reading.",
-    "proofUrl": "https://www.britishcouncil.org/exam/aptis",
-    "proofLabel": "Verify Credential",
+    "proofUrl": "/assets/certificates/aptis-english-certificate.png",
+    "proofLabel": "View Aptis Cert",
     "credentialId": "Ref: 2882022"
   },
   {
@@ -52,8 +52,8 @@
     "highlightMetric": "3rd Prize",
     "metricLabel": "Instance Segmentation AI",
     "description": "Instance segmentation research for automated urban traffic violation detection.",
-    "proofUrl": "https://www.is.vnu.edu.vn/ket-qua-nghien-cuu-khoa-hoc-cua-sinh-vien-nam-2024-2025/",
-    "proofLabel": "View Registry",
+    "proofUrl": "/assets/certificates/scientific-research-prize-2026.png",
+    "proofLabel": "View Prize Cert",
     "credentialId": "Code: KH.NC.SV.25_56"
   },
   {
@@ -71,8 +71,8 @@
     "highlightMetric": "5/5 Criteria",
     "metricLabel": "GPA 3.44 · Conduct 100/100",
     "description": "Recognized across all 5 criteria: Ethics, Academics, Fitness, Volunteer, and Integration.",
-    "proofUrl": "https://www.is.vnu.edu.vn/",
-    "proofLabel": "View Decision 629",
+    "proofUrl": "/assets/certificates/sinh-vien-5-tot-merit.png",
+    "proofLabel": "View Merit Cert",
     "credentialId": "Decision 629-QĐ/TN-TQT"
   },
   {
@@ -90,8 +90,8 @@
     "highlightMetric": "Certified",
     "metricLabel": "Google Launchpad Partner",
     "description": "Certified in Python 3, OOP, data structures, and machine learning pipelines.",
-    "proofUrl": "https://programminghub.io/",
-    "proofLabel": "Verify Credential",
+    "proofUrl": "/assets/certificates/python-specialist-certificate.png",
+    "proofLabel": "View Python Cert",
     "credentialId": "ID: 1708528712324"
   },
   {
@@ -109,8 +109,8 @@
     "highlightMetric": "MOS Certified",
     "metricLabel": "Spreadsheet & Analytics",
     "description": "Certified in advanced formulas, data modeling, and visualization.",
-    "proofUrl": "https://verify.certiport.com",
-    "proofLabel": "Verify at Certiport",
+    "proofUrl": "/assets/certificates/mos-excel-certificate.png",
+    "proofLabel": "View MOS Excel",
     "credentialId": "Code: wybNE-22X8"
   },
   {
@@ -128,8 +128,8 @@
     "highlightMetric": "MOS Certified",
     "metricLabel": "Document Engineering",
     "description": "Certified in academic documentation, typography structuring, and formatting.",
-    "proofUrl": "https://verify.certiport.com",
-    "proofLabel": "Verify at Certiport",
+    "proofUrl": "/assets/certificates/mos-word-certificate.png",
+    "proofLabel": "View MOS Word",
     "credentialId": "Code: m7aq-DTpQ"
   },
   {
@@ -147,8 +147,8 @@
     "highlightMetric": "MOS Certified",
     "metricLabel": "Presentation Architecture",
     "description": "Certified in technical slide architecture and multimedia presentation design.",
-    "proofUrl": "https://verify.certiport.com",
-    "proofLabel": "Verify at Certiport",
+    "proofUrl": "/assets/certificates/mos-powerpoint-certificate.png",
+    "proofLabel": "View MOS PPT",
     "credentialId": "Code: wNwUC-22Mn"
   },
   {
@@ -166,8 +166,8 @@
     "highlightMetric": "Completed",
     "metricLabel": "Vision & Speech AI",
     "description": "Research on real-time facial and acoustic sentiment models optimized for edge devices.",
-    "proofUrl": "https://www.is.vnu.edu.vn/",
-    "proofLabel": "View Registry",
+    "proofUrl": "/assets/certificates/scientific-research-emotion-ai.png",
+    "proofLabel": "View Research Cert",
     "credentialId": "Code: CN.NC.SV.24_20"
   },
   {
@@ -185,8 +185,8 @@
     "highlightMetric": "Commander",
     "metricLabel": "National 80th Anniversary",
     "description": "Commanded volunteer contingent for national parade operations and Delegation A80.",
-    "proofUrl": "https://badinh.hanoi.gov.vn/",
-    "proofLabel": "View Certificate",
+    "proofUrl": "/assets/certificates/national-day-commander-commendation.png",
+    "proofLabel": "View Commendation",
     "credentialId": "Commendation Ba Dinh"
   },
   {
@@ -204,7 +204,7 @@
     "highlightMetric": "5+ Honors",
     "metricLabel": "Conduct 100/100 · Secretary",
     "description": "Branch Secretary (Conduct 100/100). Awarded 5+ merit certificates for youth leadership.",
-    "proofUrl": "https://www.is.vnu.edu.vn/",
+    "proofUrl": "/assets/certificates/youth-union-leadership-commendation.png",
     "proofLabel": "View Commendation",
     "credentialId": "Decisions 603 & 170"
   },
@@ -223,8 +223,8 @@
     "highlightMetric": "Community",
     "metricLabel": "Volunteer & Organizer",
     "description": "Official volunteer for Hanoi Lotus Festival 2026 and Gala 139 event coordinator.",
-    "proofUrl": "https://sodulich.hanoi.gov.vn/",
-    "proofLabel": "View Certificate",
+    "proofUrl": "/assets/certificates/hanoi-lotus-festival-community-cert.png",
+    "proofLabel": "View Tourism Cert",
     "credentialId": "Hanoi Tourism Cert"
   }
 ]

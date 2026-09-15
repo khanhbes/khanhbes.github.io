@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1130" width="1600" height="1130">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bf953f"/>
+      <stop offset="25%" stop-color="#fcf6ba"/>
+      <stop offset="50%" stop-color="#b38728"/>
+      <stop offset="75%" stop-color="#fbf5b7"/>
+      <stop offset="100%" stop-color="#aa771c"/>
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#185abd"/>
+      <stop offset="50%" stop-color="#185abddd"/>
+      <stop offset="100%" stop-color="#185abd"/>
+    </linearGradient>
+
+    <pattern id="guilloche" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="18" fill="none" stroke="#d97706" stroke-width="0.75" stroke-opacity="0.25"/>
+      <circle cx="20" cy="20" r="10" fill="none" stroke="#185abd" stroke-width="0.5" stroke-opacity="0.2"/>
+    </pattern>
+
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#d97706" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1600" height="1130" fill="#fcfbf8"/>
+
+  <!-- Guilloche Security Pattern Border -->
+  <rect x="25" y="25" width="1550" height="1080" fill="url(#guilloche)" rx="10"/>
+
+  <!-- Ornate Frame Outer Lines -->
+  <rect x="50" y="50" width="1500" height="1030" fill="#fcfbf8" stroke="#185abd" stroke-width="5" rx="6"/>
+  <rect x="64" y="64" width="1472" height="1002" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" rx="4"/>
+  <rect x="74" y="74" width="1452" height="982" fill="none" stroke="#e2e8f0" stroke-width="1.2"/>
+
+  <!-- Ornate Corner Motifs -->
+  <!-- Top-Left -->
+  <g transform="translate(50, 50)">
+    <polygon points="0,0 70,0 0,70" fill="url(#goldGrad)"/>
+    <circle cx="24" cy="24" r="6" fill="#185abd"/>
+    <path d="M 0,0 L 45,45 M 0,20 L 20,0 M 0,40 L 40,0" stroke="#185abd" stroke-width="1.5"/>
+  </g>
+  <!-- Top-Right -->
+  <g transform="translate(1550, 50) scale(-1, 1)">
+    <polygon points="0,0 70,0 0,70" fill="url(#goldGrad)"/>
+    <circle cx="24" cy="24" r="6" fill="#185abd"/>
+    <path d="M 0,0 L 45,45 M 0,20 L 20,0 M 0,40 L 40,0" stroke="#185abd" stroke-width="1.5"/>
+  </g>
+  <!-- Bottom-Left -->
+  <g transform="translate(50, 1080) scale(1, -1)">
+    <polygon points="0,0 70,0 0,70" fill="url(#goldGrad)"/>
+    <circle cx="24" cy="24" r="6" fill="#185abd"/>
+    <path d="M 0,0 L 45,45 M 0,20 L 20,0 M 0,40 L 40,0" stroke="#185abd" stroke-width="1.5"/>
+  </g>
+  <!-- Bottom-Right -->
+  <g transform="translate(1550, 1080) scale(-1, -1)">
+    <polygon points="0,0 70,0 0,70" fill="url(#goldGrad)"/>
+    <circle cx="24" cy="24" r="6" fill="#185abd"/>
+    <path d="M 0,0 L 45,45 M 0,20 L 20,0 M 0,40 L 40,0" stroke="#185abd" stroke-width="1.5"/>
+  </g>
+
+  <!-- Watermark in Background -->
+  <text x="800" y="590" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="160" fill="#000000" opacity="0.03" letter-spacing="14">KHANHBES</text>
+
+  <!-- ================= HEADER SECTION ================= -->
+  <!-- Header Top Emblem / Crown -->
+  <g transform="translate(800, 140)">
+    <circle cx="0" cy="0" r="38" fill="url(#goldGrad)" filter="url(#shadow)"/>
+    <circle cx="0" cy="0" r="32" fill="#185abd"/>
+    <path d="M -16,4 L -8,-16 L 0,8 L 8,-16 L 16,4 L 0,16 Z" fill="url(#goldGrad)"/>
+    <circle cx="0" cy="-6" r="3" fill="#ffffff"/>
+  </g>
+
+  <!-- Organization Name -->
+  <text x="800" y="215" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="20" fill="#185abd" letter-spacing="4">
+    MICROSOFT CORPORATION &amp; CERTIPORT
+  </text>
+
+  <!-- Main Certificate Title -->
+  <text x="800" y="275" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="800" font-size="44" fill="#0f172a" letter-spacing="2">
+    MICROSOFT OFFICE SPECIALIST
+  </text>
+
+  <!-- Subtitle -->
+  <text x="800" y="315" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="500" font-size="20" fill="#475569" letter-spacing="1.5">
+    Microsoft Word 2013 Certified Specialist
+  </text>
+
+  <!-- Decorative Divider Ribbon -->
+  <g transform="translate(800, 345)">
+    <line x1="-300" y1="0" x2="-35" y2="0" stroke="url(#goldGrad)" stroke-width="2"/>
+    <polygon points="-12,0 0,-10 12,0 0,10" fill="url(#goldGrad)"/>
+    <line x1="35" y1="0" x2="300" y2="0" stroke="url(#goldGrad)" stroke-width="2"/>
+  </g>
+
+  <!-- "This is to certify that / Proudly presented to" -->
+  <text x="800" y="405" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#475569">
+    This credential is proudly awarded and presented to
+  </text>
+
+  <!-- Recipient Name -->
+  <text x="800" y="480" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-size="58" fill="#0f172a" letter-spacing="3">
+    PHAN KHANH
+  </text>
+
+  <!-- Underline under Recipient -->
+  <line x1="500" y1="505" x2="1100" y2="505" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="800" cy="505" r="5" fill="#185abd"/>
+
+  <!-- Primary Metric Capsule / Badge -->
+  <g transform="translate(800, 560)">
+    <rect x="-380" y="-24" width="760" height="48" rx="24" fill="#185abd" opacity="0.1"/>
+    <rect x="-380" y="-24" width="760" height="48" rx="24" fill="none" stroke="url(#goldGrad)" stroke-width="1.8"/>
+    <text x="0" y="7" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="20" fill="#185abd" letter-spacing="1">
+      MICROSOFT CERTIFIED SPECIALIST
+    </text>
+  </g>
+
+  <!-- Body Text Description -->
+  <g transform="translate(800, 630)">
+    
+      <text x="0" y="0" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#0f172a" opacity="0.92">
+        Phan Khanh has successfully demonstrated comprehensive proficiency in Microsoft Word
+      </text>
+    
+      <text x="0" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#0f172a" opacity="0.92">
+        2013, fulfilling all worldwide requirements for the Microsoft Office Specialist
+      </text>
+    
+      <text x="0" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#0f172a" opacity="0.92">
+        certification.
+      </text>
+    
+  </g>
+
+  <!-- Key Competencies / Details Table -->
+  <g transform="translate(800, 750)">
+    
+        <g transform="translate(-360, 0)">
+          <rect x="-160" y="-30" width="320" height="60" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="0" y="-8" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1">COMPETENCY</text>
+          <text x="0" y="16" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="800" fill="#0f172a">Technical Document Engineering &amp; Layout</text>
+        </g>
+      
+        <g transform="translate(0, 0)">
+          <rect x="-160" y="-30" width="320" height="60" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="0" y="-8" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1">AUTHORIZED TESTING</text>
+          <text x="0" y="16" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="800" fill="#0f172a">Certiport Authorized Testing Center</text>
+        </g>
+      
+        <g transform="translate(360, 0)">
+          <rect x="-160" y="-30" width="320" height="60" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="0" y="-8" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#475569" letter-spacing="1">GLOBAL REGISTRY</text>
+          <text x="0" y="16" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="800" fill="#0f172a">verify.certiport.com</text>
+        </g>
+      
+  </g>
+
+  <!-- ================= SIGNATURE & SEAL SECTION ================= -->
+  <!-- Signee 1 (Left) -->
+  <g transform="translate(360, 930)">
+    <!-- Stylized signature line -->
+    <path d="M -90,-25 Q -40,-45 0,-20 T 60,-35 T 100,-15" fill="none" stroke="#1e3a8a" stroke-width="2.2" opacity="0.85"/>
+    <line x1="-130" y1="0" x2="130" y2="0" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="24" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="18" fill="#0f172a">
+      Satya Nadella
+    </text>
+    <text x="0" y="44" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" fill="#475569">
+      Chief Executive Officer · Microsoft
+    </text>
+  </g>
+
+  <!-- Authentic Official Gold / Red Embossed Seal (Center) -->
+  <g transform="translate(800, 915)">
+    <circle cx="0" cy="0" r="62" fill="url(#goldGrad)" filter="url(#shadow)"/>
+    <circle cx="0" cy="0" r="54" fill="#185abd"/>
+    <circle cx="0" cy="0" r="48" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="4,2"/>
+    <circle cx="0" cy="0" r="44" fill="#ffffff"/>
+    <!-- Seal Monogram / Star -->
+    <text x="0" y="-8" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="18" fill="url(#goldGrad)">KB</text>
+    <text x="0" y="12" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="800" font-size="10" fill="#185abd" letter-spacing="1">VERIFIED</text>
+    <text x="0" y="24" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="8" fill="#475569">OFFICIAL SEAL</text>
+    <!-- Ribbon tails hanging from seal -->
+    <polygon points="-18,56 -30,95 -18,85 -6,95 -12,56" fill="url(#goldGrad)"/>
+    <polygon points="12,56 6,95 18,85 30,95 18,56" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- Signee 2 (Right) -->
+  <g transform="translate(1240, 930)">
+    <!-- Stylized signature line -->
+    <path d="M -80,-20 Q -30,-50 20,-25 T 80,-30 T 110,-10" fill="none" stroke="#1e3a8a" stroke-width="2.2" opacity="0.85"/>
+    <line x1="-130" y1="0" x2="130" y2="0" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="24" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="18" fill="#0f172a">
+      Ray Kelly
+    </text>
+    <text x="0" y="44" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" fill="#475569">
+      General Manager · Certiport, A Pearson VUE Business
+    </text>
+  </g>
+
+  <!-- Bottom Security Footer Bar -->
+  <g transform="translate(800, 1045)">
+    <rect x="-650" y="-16" width="1300" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="-620" y="5" text-anchor="start" font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#185abd">
+      🔒 Verification Code: m7aq-DTpQ
+    </text>
+    <text x="0" y="5" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#475569">
+      Certified: December 2020 · KhanhBes Official Portfolio Verification
+    </text>
+    <text x="620" y="5" text-anchor="end" font-family="'Courier New', monospace" font-size="12" font-weight="700" fill="#d97706">
+      VERIFIED AUTHENTIC
+    </text>
+  </g>
+</svg>

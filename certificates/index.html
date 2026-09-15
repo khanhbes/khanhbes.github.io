@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title & Description -->
+  <title>Certificates & Credentials Repository | Phan Khanh (KhanhBes)</title>
+  <meta name="description" content="Official repository of verified certificates, awards, honors, and technical credentials of Phan Khanh (KhanhBes).">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link id="favicon" rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-192.png">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body oncontextmenu="return false">
+
+  <!-- Navigation Header Starts -->
+  <header>
+    <a href="/" class="logo">
+      <img src="/assets/images/favicon.png" alt="KhanhBes Logo" class="logo-img">
+      <span>KhanhBes</span>
+    </a>
+
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/#home">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#education">Education</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/experience">Experience</a></li>
+        <li><a href="/#achievements">Achievements</a></li>
+        <li><a class="active" href="/certificates">Certificates</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Navigation Header Ends -->
+
+  <!-- Main Content Container Starts -->
+  <main class="cert-page-main">
+    
+    <!-- Hero Banner Section -->
+    <section class="cert-hero-section">
+      <div class="cert-hero-badge">
+        <i class="fas fa-certificate"></i> Official Credentials Archive
+      </div>
+      <h1 class="cert-hero-title">
+        Certificates & <span class="gradient-text">Honors Directory</span>
+      </h1>
+      <p class="cert-hero-subtitle">
+        Repository of all official certifications, university honors, scientific research awards, and leadership commendations. Click any certificate to inspect its high-resolution digital credential or access its direct file link.
+      </p>
+
+      <!-- Stats Overview Counters -->
+      <div class="cert-stats-grid">
+        <div class="cert-stat-card">
+          <div class="stat-icon-wrap stat-icon-gold">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="stat-meta">
+            <span class="stat-number">15</span>
+            <span class="stat-label">Verified Credentials</span>
+          </div>
+        </div>
+        <div class="cert-stat-card">
+          <div class="stat-icon-wrap stat-icon-indigo">
+            <i class="fas fa-language"></i>
+          </div>
+          <div class="stat-meta">
+            <span class="stat-number">CEFR B2</span>
+            <span class="stat-label">British Council Aptis (174/200)</span>
+          </div>
+        </div>
+        <div class="cert-stat-card">
+          <div class="stat-icon-wrap stat-icon-cyan">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <div class="stat-meta">
+            <span class="stat-number">3x MOS</span>
+            <span class="stat-label">Microsoft Certified Specialist</span>
+          </div>
+        </div>
+        <div class="cert-stat-card">
+          <div class="stat-icon-wrap stat-icon-emerald">
+            <i class="fas fa-medal"></i>
+          </div>
+          <div class="stat-meta">
+            <span class="stat-number">Best 2026</span>
+            <span class="stat-label">VNU-IS Capstone & Research</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Back to Portfolio Link -->
+      <div class="hero-actions">
+        <a href="/#achievements" class="btn-back-portfolio">
+          <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <a href="#certGallery" class="btn-scroll-gallery">
+          <i class="fas fa-images"></i> Browse Gallery
+        </a>
+      </div>
+    </section>
+
+    <!-- Filter & Search Toolbar Section -->
+    <section class="cert-toolbar-section" id="certGallery">
+      <div class="toolbar-container">
+        <!-- Search Input Bar -->
+        <div class="search-box-wrapper">
+          <i class="fas fa-search search-icon"></i>
+          <input 
+            type="text" 
+            id="certSearchInput" 
+            class="search-input" 
+            placeholder="Search certificates by title, issuer, credential ID (e.g. Aptis, MOS, VNU, 2026)..."
+            autocomplete="off"
+          >
+          <button id="clearSearchBtn" class="clear-search-btn" title="Clear search" style="display: none;">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="category-tabs" id="categoryTabs">
+          <button class="cat-tab is-active" data-category="all">
+            <i class="fas fa-th-large"></i> All (<span id="countAll">15</span>)
+          </button>
+          <button class="cat-tab" data-category="certifications">
+            <i class="fas fa-certificate"></i> Certifications (<span id="countCerts">6</span>)
+          </button>
+          <button class="cat-tab" data-category="awards">
+            <i class="fas fa-trophy"></i> Awards & Research (<span id="countAwards">4</span>)
+          </button>
+          <button class="cat-tab" data-category="leadership">
+            <i class="fas fa-user-shield"></i> Honors & Leadership (<span id="countLeadership">5</span>)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Grid Gallery Section -->
+    <section class="cert-grid-section">
+      <div class="cert-gallery-grid" id="certGalleryGrid">
+        <!-- Injected via script.js from manifest.json -->
+        <div class="cert-loading-state">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Loading certificate credentials repository...</p>
+        </div>
+      </div>
+
+      <div id="noResultsNotice" class="no-results-notice" style="display: none;">
+        <i class="fas fa-search-minus"></i>
+        <h3>No matching certificates found</h3>
+        <p>Try searching for different keywords or select "All" categories.</p>
+        <button id="resetSearchBtn" class="btn-reset-filter">Reset Filters</button>
+      </div>
+    </section>
+
+  </main>
+  <!-- Main Content Container Ends -->
+
+  <!-- Interactive Lightbox Modal Starts -->
+  <div id="certModal" class="cert-modal-backdrop" aria-hidden="true">
+    <div class="cert-modal-container" role="dialog" aria-modal="true">
+      
+      <!-- Modal Header -->
+      <div class="cert-modal-header">
+        <div class="modal-header-meta">
+          <span id="modalCategoryBadge" class="modal-badge">Category</span>
+          <h2 id="modalTitle" class="modal-title">Certificate Title</h2>
+          <p id="modalSubtitle" class="modal-subtitle">Issuer · Year</p>
+        </div>
+        <div class="modal-header-actions">
+          <button id="modalZoomBtn" class="modal-tool-btn" title="Toggle Zoom">
+            <i class="fas fa-search-plus"></i>
+          </button>
+          <a id="modalDirectLink" href="#" target="_blank" class="modal-tool-btn" title="Open Image in New Tab">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <a id="modalDownloadBtn" href="#" download class="modal-tool-btn modal-download-highlight" title="Download Certificate">
+            <i class="fas fa-download"></i>
+          </a>
+          <button id="modalCloseBtn" class="modal-close-btn" title="Close (Esc)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Image Stage + Side Details) -->
+      <div class="cert-modal-body">
+        <!-- Interactive Image Stage -->
+        <div class="cert-image-stage" id="certImageStage">
+          <img id="modalCertImage" src="" alt="Certificate Preview" class="modal-cert-img">
+        </div>
+
+        <!-- Metadata Sidebar -->
+        <div class="cert-modal-sidebar">
+          <div class="sidebar-section">
+            <h4 class="sidebar-heading"><i class="fas fa-info-circle"></i> Credential Details</h4>
+            
+            <div class="meta-row">
+              <span class="meta-label">Issued To:</span>
+              <span class="meta-value font-semibold">Phan Thanh Khanh (KhanhBes)</span>
+            </div>
+
+            <div class="meta-row">
+              <span class="meta-label">Issuing Body:</span>
+              <span id="modalIssuer" class="meta-value">VNU - International School</span>
+            </div>
+
+            <div class="meta-row">
+              <span class="meta-label">Year / Date:</span>
+              <span id="modalDate" class="meta-value">2026</span>
+            </div>
+
+            <div class="meta-row">
+              <span class="meta-label">Credential ID:</span>
+              <div class="credential-id-box">
+                <code id="modalCredId">ID-123456</code>
+                <button id="copyCredIdBtn" class="btn-copy-id" title="Copy Credential ID">
+                  <i class="far fa-copy"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="meta-row">
+              <span class="meta-label">Primary Metric:</span>
+              <span id="modalMetric" class="meta-value text-accent font-bold">Award Distinction</span>
+            </div>
+
+            <div class="meta-row">
+              <span class="meta-label">Status:</span>
+              <span class="meta-status-pill"><i class="fas fa-check-circle"></i> Authenticated & Verified</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h4 class="sidebar-heading"><i class="fas fa-file-alt"></i> Description</h4>
+            <p id="modalDescription" class="modal-description-text">Description goes here.</p>
+          </div>
+
+          <div class="sidebar-section">
+            <h4 class="sidebar-heading"><i class="fas fa-folder-open"></i> File Access</h4>
+            <div class="file-path-box">
+              <span class="file-path-label">File Path:</span>
+              <code id="modalFilePath" class="file-path-code">/assets/certificates/file.png</code>
+            </div>
+            <div class="file-action-buttons">
+              <a id="modalDownloadPngBtn" href="#" download class="btn-file-action primary">
+                <i class="fas fa-file-image"></i> Download High-Res PNG
+              </a>
+              <a id="modalDownloadSvgBtn" href="#" download class="btn-file-action secondary">
+                <i class="fas fa-vector-square"></i> Open Vector SVG
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer Navigation (Previous / Next) -->
+      <div class="cert-modal-footer">
+        <button id="modalPrevBtn" class="modal-nav-btn">
+          <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <span id="modalCounter" class="modal-counter">1 of 15</span>
+        <button id="modalNextBtn" class="modal-nav-btn">
+          Next <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- Interactive Lightbox Modal Ends -->
+
+  <!-- Footer Section Starts -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="/assets/images/favicon.png" alt="KhanhBes Logo">
+          <span>KhanhBes Portfolio</span>
+        </a>
+        <p>Phan Thanh Khanh · AI Engineer & Full-Stack Developer</p>
+      </div>
+      <div class="footer-links">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="/#about"><i class="fas fa-user"></i> About</a>
+        <a href="/#achievements"><i class="fas fa-trophy"></i> Achievements</a>
+        <a href="/projects"><i class="fas fa-laptop-code"></i> Projects</a>
+        <a href="/certificates"><i class="fas fa-certificate"></i> Certificates</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Phan Thanh Khanh (KhanhBes). All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- Footer Section Ends -->
+
+  <!-- jQuery & Custom Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@
     "badgeColor": "violet",
     "summary": "Mastered core neural network foundations, backpropagation, CNN architectures, transformer basics, and hyperparameter tuning.",
     "skills": ["Neural Networks", "CNNs", "Optimization", "Sequence Models", "PyTorch"],
-    "verifyUrl": "https://coursera.org/verify/specialization"
+    "verifyUrl": "/assets/certificates/deep-learning-specialization.png"
   },
   {
     "id": "cert-2",
@@ -23,7 +23,7 @@
     "badgeColor": "cyan",
     "summary": "Specialized training on real-time object detection (YOLOv8–YOLOv12), instance segmentation, anchor-free paradigms, and ByteTrack MOT tracking algorithms.",
     "skills": ["YOLOv12", "Instance Segmentation", "ByteTrack", "OpenCV", "TensorRT"],
-    "verifyUrl": "https://github.com/khanhbes"
+    "verifyUrl": "/assets/certificates/computer-vision-yolo.png"
   },
   {
     "id": "cert-3",
@@ -36,7 +36,7 @@
     "badgeColor": "emerald",
     "summary": "Comprehensive architecture for high-performance cross-platform mobile apps, BLoC/Provider state management, offline caching, and Firebase Cloud Messaging push notifications.",
     "skills": ["Flutter", "Dart", "BLoC", "Firebase FCM", "Offline SQLite"],
-    "verifyUrl": "https://flutter.dev"
+    "verifyUrl": "/assets/certificates/flutter-dart-engineering.png"
   },
   {
     "id": "cert-4",
@@ -49,7 +49,7 @@
     "badgeColor": "amber",
     "summary": "Model optimization pipeline: converting PyTorch models via ONNX to TensorFlow SavedModel and quantized float32/INT8 TensorFlow Lite for Android CPU/GPU delegates.",
     "skills": ["TFLite", "ONNX", "Quantization", "Edge Deployment", "Android NDK"],
-    "verifyUrl": "https://tensorflow.org/lite"
+    "verifyUrl": "/assets/certificates/computer-vision-yolo.png"
   },
   {
     "id": "cert-5",
@@ -62,7 +62,7 @@
     "badgeColor": "blue",
     "summary": "Architected low-latency AI backends with FastAPI and Flask, asynchronous WebSocket streaming for continuous video frames, Docker containerization, and RESTful APIs.",
     "skills": ["FastAPI", "Flask", "Docker", "WebSockets", "Linux"],
-    "verifyUrl": "https://github.com/khanhbes"
+    "verifyUrl": "/assets/certificates/deep-learning-specialization.png"
   },
   {
     "id": "cert-6",
@@ -75,6 +75,6 @@
     "badgeColor": "rose",
     "summary": "Advanced communicative fluency and scientific English proficiency. Served as an English tutor at ETOP English Center, mentoring university and high school students.",
     "skills": ["Technical Writing", "Academic Presentation", "Tutoring", "Fluent Communication"],
-    "verifyUrl": "https://github.com/khanhbes"
+    "verifyUrl": "/assets/certificates/aptis-english-certificate.png"
   }
 ]
