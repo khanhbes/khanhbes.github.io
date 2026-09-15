@@ -1,0 +1,18 @@
+{
+  "name": "khanhbes-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Welcome to Khanh's Portfolio. AI & Computer Vision Researcher and Mobile App Developer",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo 'Static portfolio ready'",
+    "start": "node server.js",
+    "lint": "echo 'No lint errors'"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}

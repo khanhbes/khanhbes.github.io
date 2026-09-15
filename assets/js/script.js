@@ -1,265 +1,340 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Mobile Menu Toggle
+  const menuBtn = document.getElementById("menu");
+  const navbar = document.querySelector(".navbar");
 
-    $('#menu').click(function () {
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+  if (menuBtn && navbar) {
+    menuBtn.addEventListener("click", function () {
+      menuBtn.classList.toggle("fa-times");
+      navbar.classList.toggle("nav-toggle");
+    });
+  }
+
+  // Close mobile menu on nav link click
+  document.querySelectorAll(".navbar ul li a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (menuBtn && navbar) {
+        menuBtn.classList.remove("fa-times");
+        navbar.classList.remove("nav-toggle");
+      }
+    });
+  });
+
+  // 2. Scroll Events (Header blur, Scroll Progress, Back to Top, Scrollspy)
+  const header = document.querySelector("header");
+  const scrollTopBtn = document.getElementById("scroll-top");
+  const scrollProgress = document.querySelector(".scroll-progress");
+  const sections = document.querySelectorAll("section[id]");
+
+  window.addEventListener("scroll", function () {
+    const scrollY = window.scrollY;
+
+    // Header styling on scroll
+    if (header) {
+      if (scrollY > 60) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+
+    // Back to top button visibility
+    if (scrollTopBtn) {
+      if (scrollY > 300) {
+        scrollTopBtn.classList.add("active");
+      } else {
+        scrollTopBtn.classList.remove("active");
+      }
+    }
+
+    // Scroll progress bar
+    if (scrollProgress) {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0) {
+        const progress = (scrollY / docHeight) * 100;
+        scrollProgress.style.width = `${progress}%`;
+      }
+    }
+
+    // Scrollspy for active nav link
+    let currentSectionId = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentSectionId = section.getAttribute("id");
+      }
     });
 
-    $(window).on('scroll load', function () {
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
-        } else {
-            document.querySelector('#scroll-top').classList.remove('active');
+    if (currentSectionId) {
+      document.querySelectorAll(".navbar ul li a").forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${currentSectionId}`) {
+          link.classList.add("active");
         }
+      });
+    }
+  });
 
-        // scroll spy
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
-
-            if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
-        });
+  // 3. Dynamic Typed.js
+  if (document.querySelector(".typing-text") && typeof Typed !== "undefined") {
+    new Typed(".typing-text", {
+      strings: [
+        "AI & Computer Vision Research",
+        "Edge AI & YOLO Architectures",
+        "Flutter & Mobile App Engineering",
+        "Data Science & Machine Learning"
+      ],
+      loop: true,
+      typeSpeed: 45,
+      backSpeed: 25,
+      backDelay: 1400
     });
+  }
 
-    // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
-    });
+  // 4. Vanilla Tilt Init
+  function initTilt() {
+    if (typeof VanillaTilt !== "undefined") {
+      VanillaTilt.init(document.querySelectorAll(".tilt"), {
+        max: 12,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.15
+      });
+    }
+  }
+  initTilt();
 
-    // <!-- emailjs to mail contact form data -->
-    $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
+  // 5. Load Skills dynamically
+  async function loadSkills() {
+    const container = document.getElementById("skillsContainer");
+    if (!container) return;
 
-        emailjs.sendForm('service_hnze7h9', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
-        event.preventDefault();
-    });
-    // <!-- emailjs to mail contact form data -->
+    try {
+      const res = await fetch("/skills.json");
+      const skills = await res.json();
 
-});
-
-document.addEventListener('visibilitychange',
-    function () {
-        if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Khanh";
-            $("#favicon").attr("href", "assets/images/favicon.png");
-        }
-        else {
-            document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "assets/images/favhand.png");
-        }
-    });
-
-
-// <!-- typed js effect starts -->
-var typed = new Typed(".typing-text", {
-    strings: ["AI Research", "Computer Vision", "Mobile App Development", "YOLO Models", "Flutter Development"],
-    loop: true,
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 500,
-});
-// <!-- typed js effect ends -->
-
-async function fetchData(type = "skills") {
-    let response
-    type === "skills" ?
-        response = await fetch("skills.json")
-        :
-        response = await fetch("./projects/projects.json")
-    const data = await response.json();
-    return data;
-}
-
-function showSkills(skills) {
-    let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = "";
-    skills.forEach(skill => {
-        skillHTML += `
-        <div class="bar">
-              <div class="info">
-                <img src=${skill.icon} alt="skill" />
-                <span>${skill.name}</span>
-              </div>
-            </div>`
-    });
-    skillsContainer.innerHTML = skillHTML;
-}
-
-function showProjects(projects) {
-    let projectsContainer = document.querySelector("#work .box-container");
-    let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
-        projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+      container.innerHTML = skills.map(skill => `
+        <div class="bar tilt">
+          <div class="info">
+            <img src="${skill.icon}" alt="${skill.name}" loading="lazy" />
+            <span>${skill.name}</span>
           </div>
         </div>
-      </div>
-    </div>`
-    });
-    projectsContainer.innerHTML = projectHTML;
+      `).join("");
 
-    // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
-    // <!-- tilt js effect ends -->
-
-    /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
-    });
-
-    /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
-
-}
-
-fetchData().then(data => {
-    showSkills(data);
-});
-
-fetchData("projects").then(data => {
-    showProjects(data);
-});
-
-// <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
-// <!-- tilt js effect ends -->
-
-
-// pre loader start
-// function loader() {
-//     document.querySelector('.loader-container').classList.add('fade-out');
-// }
-// function fadeOut() {
-//     setInterval(loader, 500);
-// }
-// window.onload = fadeOut;
-// pre loader end
-
-// disable developer mode
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
+      initTilt();
+    } catch (e) {
+      console.warn("Could not load skills:", e);
     }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
-}
+  }
+  loadSkills();
 
-// Start of Tawk.to Live Chat
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-Tawk_API.customStyle = {
-    visibility : {
-        desktop : {
-            position : 'bl',
-            xOffset : 20,
-            yOffset : 20
-        },
-        mobile : {
-            position : 'bl',
-            xOffset : 15,
-            yOffset : 15
+  // 5.5 Load Achievements dynamically with Category Filtering & View All Toggle
+  let allAchievements = [];
+  let currentAchievementFilter = "all";
+  let isShowingAllAchievements = false;
+
+  async function loadAchievements() {
+    const container = document.getElementById("achievementsContainer");
+    if (!container) return;
+
+    try {
+      const res = await fetch("/achievements.json");
+      allAchievements = await res.json();
+      renderAchievements();
+      setupAchievementFilters();
+      setupViewAllToggle();
+    } catch (e) {
+      console.warn("Could not load achievements:", e);
+    }
+  }
+
+  function renderAchievements() {
+    const container = document.getElementById("achievementsContainer");
+    const viewAllBtn = document.getElementById("viewAllCertsBtn");
+    if (!container) return;
+
+    // Filter by selected category
+    const categoryList = currentAchievementFilter === "all"
+      ? allAchievements
+      : allAchievements.filter(item => item.category === currentAchievementFilter);
+
+    // Determine what to display:
+    // If on "all" tab and not showing all, only show top featured major certificates/awards
+    let displayList = categoryList;
+    if (currentAchievementFilter === "all" && !isShowingAllAchievements) {
+      displayList = categoryList.filter(item => item.featured);
+    }
+
+    // Configure the View All button
+    if (viewAllBtn && viewAllBtn.parentElement) {
+      if (currentAchievementFilter !== "all") {
+        viewAllBtn.parentElement.style.display = "none";
+      } else {
+        viewAllBtn.parentElement.style.display = "flex";
+        if (isShowingAllAchievements) {
+          viewAllBtn.innerHTML = `
+            <i class="fas fa-compress-alt"></i>
+            <span>Show Featured Only</span>
+            <i class="fas fa-chevron-up toggle-icon"></i>
+          `;
+        } else {
+          viewAllBtn.innerHTML = `
+            <i class="fas fa-layer-group"></i>
+            <span>View All Certificates & Honors (${allAchievements.length})</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          `;
         }
+      }
     }
-};
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6a8d1845dcccab344b66d6eb/1k0ridk4g';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-})();
-// End of Tawk.to Live Chat
 
+    container.innerHTML = displayList.map(item => `
+      <div class="achieve-box tilt" data-category="${item.category}">
+        <div class="achieve-header">
+          <div class="category-pill ${item.category}">
+            <i class="${item.categoryIcon}"></i>
+            <span>${item.categoryLabel}</span>
+          </div>
+          <span class="achieve-year"><i class="far fa-calendar-alt"></i> ${item.year}</span>
+        </div>
 
-/* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
+        <div class="achieve-badge-row">
+          <span class="badge-pill ${item.badgeColor || 'cyan'}">${item.badge}</span>
+        </div>
+
+        <div class="achieve-main">
+          <div class="icon-avatar">
+            <i class="${item.icon}"></i>
+          </div>
+          <div class="title-group">
+            <h3>${item.title}</h3>
+            <p class="organization"><i class="fas fa-landmark"></i> ${item.organization}</p>
+          </div>
+        </div>
+
+        ${item.highlightMetric ? `
+          <div class="metric-capsule">
+            <span class="metric-val">${item.highlightMetric}</span>
+            <span class="metric-divider">|</span>
+            <span class="metric-name">${item.metricLabel}</span>
+          </div>
+        ` : ''}
+
+        <p class="achieve-desc">${item.description}</p>
+
+        <div class="achieve-actions">
+          <a href="${item.proofUrl || 'https://www.is.vnu.edu.vn/'}" target="_blank" rel="noopener noreferrer" class="achieve-proof-btn">
+            <i class="fas fa-external-link-alt"></i>
+            <span>${item.proofLabel || 'View Proof'}</span>
+          </a>
+          ${item.credentialId ? `
+            <span class="achieve-cred-id" title="${item.credentialId}">
+              <i class="fas fa-fingerprint"></i> ${item.credentialId}
+            </span>
+          ` : ''}
+        </div>
+      </div>
+    `).join("");
+
+    initTilt();
+  }
+
+  function setupAchievementFilters() {
+    const filterButtons = document.querySelectorAll(".achieve-tab");
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", function () {
+        filterButtons.forEach(b => b.classList.remove("is-active"));
+        this.classList.add("is-active");
+        currentAchievementFilter = this.getAttribute("data-filter");
+        // When user explicitly selects a specific category tab, show all in that category
+        renderAchievements();
+      });
+    });
+  }
+
+  function setupViewAllToggle() {
+    const viewAllBtn = document.getElementById("viewAllCertsBtn");
+    if (!viewAllBtn) return;
+
+    viewAllBtn.addEventListener("click", function () {
+      isShowingAllAchievements = !isShowingAllAchievements;
+      renderAchievements();
+      if (!isShowingAllAchievements) {
+        const section = document.getElementById("achievements");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  }
+
+  loadAchievements();
+
+  // 6. Load Projects dynamically
+  async function loadProjects() {
+    const container = document.getElementById("projectsContainer");
+    if (!container) return;
+
+    try {
+      const res = await fetch("/projects/projects.json");
+      const projects = await res.json();
+
+      container.innerHTML = projects.map(project => `
+        <div class="box tilt">
+          <div class="project-img-wrapper">
+            <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy" />
+            ${project.badge ? `<span class="project-badge">${project.badge}</span>` : ''}
+          </div>
+          <div class="content">
+            <div class="tag">
+              <h3>${project.name}</h3>
+            </div>
+            <div class="desc">
+              <p>${project.desc}</p>
+              ${project.tags && project.tags.length ? `
+                <div class="project-tags">
+                  ${project.tags.map(t => `<span class="tech-pill">${t}</span>`).join('')}
+                </div>
+              ` : ''}
+              <div class="btns">
+                <a href="${project.links.view}" class="btn"><i class="fas fa-eye"></i> View</a>
+                <a href="${project.links.code}" class="btn" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-code"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      initTilt();
+    } catch (e) {
+      console.warn("Could not load projects:", e);
+    }
+  }
+  loadProjects();
+
+  // 7. Contact Form Handler with Feedback Toast
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector("button[type='submit']");
+      const originalText = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `Sending... <i class="fas fa-spinner fa-spin"></i>`;
+
+      setTimeout(() => {
+        submitBtn.innerHTML = `Sent Successfully! <i class="fas fa-check"></i>`;
+        submitBtn.style.background = "linear-gradient(135deg, #10b981 0%, #059669 100%)";
+        contactForm.reset();
+
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = "";
+        }, 3500);
+      }, 900);
+    });
+  }
 });
-
-/* SCROLL HOME */
-srtop.reveal('.home .content h3', { delay: 200 });
-srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
-
-srtop.reveal('.home .image', { delay: 400 });
-srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .telegram', { interval: 600 });
-srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
-
-/* SCROLL ABOUT */
-srtop.reveal('.about .content h3', { delay: 200 });
-srtop.reveal('.about .content .tag', { delay: 200 });
-srtop.reveal('.about .content p', { delay: 200 });
-srtop.reveal('.about .content .box-container', { delay: 200 });
-srtop.reveal('.about .content .resumebtn', { delay: 200 });
-
-
-/* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
-
-/* SCROLL EDUCATION */
-srtop.reveal('.education .box', { interval: 200 });
-
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
-
-/* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
-
-/* SCROLL CONTACT */
-srtop.reveal('.contact .container', { delay: 400 });
-srtop.reveal('.contact .container .form-group', { delay: 400 });

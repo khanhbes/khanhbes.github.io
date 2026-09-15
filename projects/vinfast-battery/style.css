@@ -91,6 +91,16 @@ section {
   border: 1px solid rgba(72, 231, 167, 0.48);
   color: var(--accent);
   font-size: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.brand-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+  border-radius: 6px;
 }
 
 .header-nav {

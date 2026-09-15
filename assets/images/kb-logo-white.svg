@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <!-- Brushed metal linear gradients for front faces -->
+    <linearGradient id="metalFace" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b5bec9"/>
+      <stop offset="12%" stop-color="#dce2e8"/>
+      <stop offset="25%" stop-color="#f2f5f8"/>
+      <stop offset="38%" stop-color="#c8d0db"/>
+      <stop offset="50%" stop-color="#e8edf2"/>
+      <stop offset="65%" stop-color="#b0bac5"/>
+      <stop offset="78%" stop-color="#d4dbe3"/>
+      <stop offset="90%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#b8c1cc"/>
+    </linearGradient>
+
+    <!-- Top & Left Light Bevel Gradient -->
+    <linearGradient id="lightBevel" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#d8e0e8"/>
+      <stop offset="100%" stop-color="#95a1b0"/>
+    </linearGradient>
+
+    <!-- Bottom & Right Dark Bevel Gradient -->
+    <linearGradient id="darkBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a4049"/>
+      <stop offset="40%" stop-color="#252a32"/>
+      <stop offset="100%" stop-color="#12151a"/>
+    </linearGradient>
+
+    <!-- Diagonal Arm Metal Gradient -->
+    <linearGradient id="diagMetal" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a8b2bf"/>
+      <stop offset="25%" stop-color="#e2e7ec"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#bec7d2"/>
+      <stop offset="100%" stop-color="#dde3e9"/>
+    </linearGradient>
+
+    <!-- Chrome Outer Drop Shadow -->
+    <filter id="metalShadow" x="-15%" y="-15%" width="135%" height="135%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.45"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Subtle brushed texture pattern -->
+    <pattern id="brushedPattern" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="1" x2="100" y2="1" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+      <line x1="0" y1="3" x2="100" y2="3" stroke="#000000" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="1000" fill="#ffffff"/>
+
+  <!-- Main 3D Monogram Group -->
+  <g filter="url(#metalShadow)">
+
+    <!-- ============================================== -->
+    <!-- 1. DEEP 3D EXTRUSION BASE / SHADOW LAYER       -->
+    <!-- ============================================== -->
+
+    <!-- Left Stem Extrusion -->
+    <path d="M 162 145 L 246 145 L 246 865 L 162 865 Z" fill="url(#darkBevel)" transform="translate(10, 14)"/>
+
+    <!-- Diagonal K & B Loops Extrusion -->
+    <g transform="translate(10, 14)" fill="url(#darkBevel)">
+      <!-- Central Spine -->
+      <path d="M 426 145 L 508 145 L 508 865 L 426 865 Z"/>
+      <!-- Top Diagonal and B Top loop -->
+      <path d="M 235 525 L 426 312 L 515 145 L 610 145 C 765 145 845 225 845 345 C 845 440 780 495 680 515 L 680 525 C 805 545 875 615 875 725 C 875 835 775 865 645 865 L 426 865 L 235 525 Z"/>
+    </g>
+
+    <!-- ============================================== -->
+    <!-- 2. BEVELED ACCENT OUTER FACETS                 -->
+    <!-- ============================================== -->
+
+    <!-- Left Vertical Stem Bevel -->
+    <polygon points="162,145 246,145 240,153 170,153" fill="url(#lightBevel)"/>
+    <polygon points="162,145 170,153 170,857 162,865" fill="url(#lightBevel)"/>
+    <polygon points="162,865 170,857 240,857 246,865" fill="url(#darkBevel)"/>
+    <polygon points="246,145 240,153 240,857 246,865" fill="url(#darkBevel)"/>
+
+    <!-- Left Stem Front Face -->
+    <rect x="170" y="153" width="70" height="704" fill="url(#metalFace)"/>
+    <rect x="170" y="153" width="70" height="704" fill="url(#brushedPattern)"/>
+
+    <!-- Central Spine (Backing sections) -->
+    <!-- Top section of spine -->
+    <polygon points="426,145 508,145 500,155 434,155" fill="url(#lightBevel)"/>
+    <polygon points="426,145 434,155 434,290 426,298" fill="url(#lightBevel)"/>
+    <polygon points="508,145 500,155 500,210 508,218" fill="url(#darkBevel)"/>
+    <path d="M 434 155 L 500 155 L 500 220 L 434 286 Z" fill="url(#metalFace)"/>
+    <path d="M 434 155 L 500 155 L 500 220 L 434 286 Z" fill="url(#brushedPattern)"/>
+
+    <!-- Bottom section of spine -->
+    <polygon points="426,865 508,865 500,855 434,855" fill="url(#darkBevel)"/>
+    <polygon points="426,760 434,752 434,855 426,865" fill="url(#lightBevel)"/>
+    <polygon points="508,865 500,855 500,760 508,768" fill="url(#darkBevel)"/>
+    <path d="M 434 760 L 500 826 L 500 855 L 434 855 Z" fill="url(#metalFace)"/>
+    <path d="M 434 760 L 500 826 L 500 855 L 434 855 Z" fill="url(#brushedPattern)"/>
+
+
+    <!-- ============================================== -->
+    <!-- 3. TOP DIAGONAL ARM (From Stem to Top of B)    -->
+    <!-- ============================================== -->
+    <!-- Outer chamfered band linking to top of B -->
+    <path d="M 246 525 
+             L 522 225 
+             L 575 145 
+             L 645 145 
+             L 508 340 
+             L 326 538 Z" 
+          fill="url(#diagMetal)"/>
+
+    <!-- Light edge on top of diagonal -->
+    <path d="M 246 525 L 522 225 L 575 145 L 585 145 L 532 228 L 256 532 Z" fill="#ffffff" opacity="0.9"/>
+    <!-- Dark shadow under diagonal -->
+    <path d="M 326 538 L 508 340 L 518 348 L 334 546 Z" fill="#1c2129" opacity="0.8"/>
+
+
+    <!-- ============================================== -->
+    <!-- 4. BOTTOM DIAGONAL ARM (K lower leg)           -->
+    <!-- ============================================== -->
+    <path d="M 358 522 
+             L 600 782 
+             L 642 865 
+             L 576 865 
+             L 526 805 
+             L 302 565 Z" 
+          fill="url(#diagMetal)"/>
+    <!-- Highlight on bottom diagonal upper edge -->
+    <path d="M 358 522 L 600 782 L 642 865 L 632 865 L 592 786 L 350 528 Z" fill="#ffffff" opacity="0.8"/>
+    <!-- Dark bevel on bottom diagonal lower edge -->
+    <path d="M 302 565 L 526 805 L 576 865 L 566 865 L 518 809 L 294 569 Z" fill="#1c2129" opacity="0.85"/>
+
+
+    <!-- ============================================== -->
+    <!-- 5. MIDDLE ARROW (Horizontal B divider)         -->
+    <!-- ============================================== -->
+    <!-- Arrow pointing left towards the notch of K -->
+    <path d="M 438 496 
+             L 512 432 
+             L 512 468 
+             L 680 468 
+             L 680 524 
+             L 512 524 
+             L 512 560 Z" 
+          fill="url(#metalFace)"/>
+    <path d="M 438 496 
+             L 512 432 
+             L 512 468 
+             L 680 468 
+             L 680 524 
+             L 512 524 
+             L 512 560 Z" 
+          fill="url(#brushedPattern)"/>
+
+    <!-- Arrow top edge highlight -->
+    <path d="M 438 496 L 512 432 L 512 440 L 448 498 Z" fill="#ffffff" opacity="0.95"/>
+    <path d="M 512 468 L 680 468 L 680 474 L 512 474 Z" fill="#ffffff" opacity="0.85"/>
+    <!-- Arrow bottom edge shadow -->
+    <path d="M 438 496 L 512 560 L 512 552 L 448 498 Z" fill="#1c2129" opacity="0.9"/>
+    <path d="M 512 524 L 680 524 L 680 518 L 512 518 Z" fill="#2d333d" opacity="0.8"/>
+
+
+    <!-- ============================================== -->
+    <!-- 6. THE LETTER B (Upper and Lower Curved Lobes) -->
+    <!-- ============================================== -->
+
+    <!-- Outer B Solid Path with Inner Holes -->
+    <path fill-rule="evenodd" d="
+      M 575 145 
+      L 670 145 
+      C 775 145 848 200 848 320 
+      C 848 410 790 472 700 495 
+      C 810 518 876 585 876 705 
+      C 876 828 785 865 660 865 
+      L 535 865 
+      L 600 782 
+      L 655 782 
+      C 730 782 786 756 786 695 
+      C 786 630 730 605 650 605 
+      L 512 605 
+      L 512 560 
+      L 675 560 
+      C 745 560 762 530 762 490 
+      C 762 430 715 410 645 410 
+      L 508 410 
+      L 550 340 
+      L 645 340 
+      C 700 340 758 318 758 245 
+      C 758 195 710 175 640 175 
+      L 610 175 
+      L 548 248 
+      Z" 
+      fill="url(#metalFace)"/>
+
+    <path fill-rule="evenodd" d="
+      M 575 145 
+      L 670 145 
+      C 775 145 848 200 848 320 
+      C 848 410 790 472 700 495 
+      C 810 518 876 585 876 705 
+      C 876 828 785 865 660 865 
+      L 535 865 
+      L 600 782 
+      L 655 782 
+      C 730 782 786 756 786 695 
+      C 786 630 730 605 650 605 
+      L 512 605 
+      L 512 560 
+      L 675 560 
+      C 745 560 762 530 762 490 
+      C 762 430 715 410 645 410 
+      L 508 410 
+      L 550 340 
+      L 645 340 
+      C 700 340 758 318 758 245 
+      C 758 195 710 175 640 175 
+      L 610 175 
+      L 548 248 
+      Z" 
+      fill="url(#brushedPattern)"/>
+
+    <!-- Outer Light Highlight on Top Arc of B -->
+    <path d="M 575 145 L 670 145 C 775 145 848 200 848 320 L 840 320 C 840 208 770 155 670 155 L 575 155 Z" fill="#ffffff" opacity="0.95"/>
+    
+    <!-- Outer Dark Shadow on Right & Bottom Arcs of B -->
+    <path d="M 848 320 C 848 410 790 472 700 495 L 696 487 C 782 465 838 405 838 320 Z" fill="#20252e" opacity="0.85"/>
+    <path d="M 876 705 C 876 828 785 865 660 865 L 535 865 L 540 857 L 660 857 C 780 857 866 820 866 705 Z" fill="#1c212a" opacity="0.9"/>
+    <path d="M 700 495 C 810 518 876 585 876 705 L 866 705 C 866 590 802 526 700 503 Z" fill="#2d343f" opacity="0.75"/>
+
+    <!-- Inner Counters (Cutouts) of B -->
+    <!-- Top Counter Bevel and Fill -->
+    <path d="M 545 258 L 638 258 C 690 258 720 280 720 330 C 720 380 690 405 638 405 L 545 405 Z" fill="#1a1e26" opacity="0.92"/>
+    <path d="M 552 265 L 635 265 C 682 265 710 284 710 330 C 710 374 682 398 635 398 L 552 398 Z" fill="#0d1117"/>
+
+    <!-- Bottom Counter Bevel and Fill -->
+    <path d="M 515 570 L 650 570 C 718 570 752 610 752 682 C 752 755 715 792 650 792 L 515 792 Z" fill="#1a1e26" opacity="0.92"/>
+    <path d="M 522 578 L 646 578 C 708 578 740 615 740 682 C 740 748 708 784 646 784 L 522 784 Z" fill="#0d1117"/>
+
+    <!-- Specular Highlight Sheen Overlays -->
+    <line x1="170" y1="153" x2="170" y2="857" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.8"/>
+    <line x1="240" y1="153" x2="240" y2="857" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.5"/>
+    <line x1="170" y1="153" x2="240" y2="153" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.9"/>
+  </g>
+</svg>

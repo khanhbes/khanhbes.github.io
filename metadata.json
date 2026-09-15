@@ -1,0 +1,8 @@
+{
+  "name": "Portfolio | Khanh",
+  "description": "Welcome to Khanh's Portfolio. AI & Computer Vision Researcher and Mobile App Developer",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

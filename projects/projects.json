@@ -1,35 +1,41 @@
 [
   {
-        "name": "Real-time Emotion Recognition with YOLOv12",
-    "desc": "Real-time face emotion recognition using YOLOv12, optimized for inference speed and accuracy. Built with Python, PyTorch, and OpenCV. Suitable for Edge AI deployments.",
+    "name": "Real-time Emotion Recognition with YOLOv12",
+    "desc": "Real-time facial emotion recognition using YOLOv12, optimized for low latency and high accuracy on edge devices. Built with Python, PyTorch, and TensorRT.",
     "image": "emotion-recognition",
     "category": "ai",
+    "badge": "Computer Vision",
+    "tags": ["YOLOv12", "PyTorch", "OpenCV", "TensorRT", "Edge AI"],
     "links": {
       "view": "./emotion-recognition/",
       "code": "https://github.com/khanhbes/Emotion-Recognition-YOLOv12"
     },
-    "details": "Giới thiệu:\nMột hệ thống Computer Vision nhận diện cảm xúc khuôn mặt theo thời gian thực sử dụng kiến trúc YOLOv12, thiết kế để cân bằng giữa tốc độ suy luận và độ chính xác, phù hợp triển khai trên thiết bị Edge hoặc server giám sát.\n\nĐiểm nổi bật kỹ thuật:\n- Áp dụng YOLOv12 để phát hiện khuôn mặt nhanh và ổn định, sau đó đưa ra nhãn cảm xúc bằng mô-đun phân loại nhẹ.\n- Tối ưu hoá inference: chuyển đổi sang ONNX và tối ưu với TensorRT/FP16 khi cần để giảm độ trễ trên GPU/Edge.\n- Pipeline xử lý video real-time với OpenCV, hỗ trợ batching và tăng tốc bằng CUDA.\n- Thiết kế để dễ dàng tích hợp với hệ thống theo dõi nhiều đối tượng (tracking) và lọc nhiễu bằng kỹ thuật lọc temporal.\n\nCông nghệ:\nPython, PyTorch, YOLOv12, OpenCV, ONNX, TensorRT, CUDA, NumPy\n\nLink:\nCode & tài liệu: https://github.com/khanhbes/Emotion-Recognition-YOLOv12"
+    "details": "Overview:\nA real-time computer vision emotion recognition system built on YOLOv12 architecture, engineered for optimal inference speed and precision on edge systems.\n\nKey Highlights:\n- Real-time facial emotion detection with custom-trained weights achieving 94.1% mAP50.\n- Quantization & acceleration pipeline using ONNX and TensorRT/FP16 for low-latency GPU/Edge execution.\n- End-to-end streaming processing pipeline built with OpenCV and CUDA acceleration.\n\nTech Stack:\nPython, PyTorch, YOLOv12, OpenCV, ONNX, TensorRT, CUDA\n\nRepository:\nhttps://github.com/khanhbes/Emotion-Recognition-YOLOv12"
   },
   {
     "name": "AI-Driven Traffic Violation Detection System",
-    "desc": "End-to-end traffic violation detection (red-light, no-helmet) with multi-object detection & tracking, real-time mobile notifications. Backend AI with YOLO + MOT, frontend app in Flutter.",
+    "desc": "Automated traffic surveillance detecting red-light and helmet violations using YOLOv8 + MOT with real-time push alerts to Flutter mobile clients.",
     "image": "violation-detect",
     "category": "ai",
+    "badge": "AI & Mobile App",
+    "tags": ["YOLOv8", "DeepSORT", "Flutter", "FastAPI", "Firebase FCM"],
     "links": {
       "view": "./violation-detect/",
       "code": "https://github.com/khanhbes/Violation-Detect"
     },
-    "details": "Giới thiệu:\nHệ thống giám sát giao thông tự động phát hiện các hành vi vi phạm như vượt đèn đỏ và không đội mũ bảo hiểm, kết hợp giữa mô hình phát hiện đối tượng và cơ chế tracking để xác định hành vi theo ngữ cảnh. Hệ thống đồng bộ sự kiện lên ứng dụng di động để cảnh báo và quản lý vi phạm.\n\nĐiểm nổi bật kỹ thuật:\n- Cơ chế hiệu chuẩn vùng (ví dụ: '5-second calibration') để xác định các vùng tĩnh như vạch dừng hoặc ranh giới làm tăng độ chính xác khi đánh dấu vi phạm.\n- Kết hợp YOLO cho detect và thuật toán Multiple-Object Tracking (MOT) để theo dõi cá thể qua nhiều khung hình, tránh trùng lặp sự kiện.\n- Pipeline song song: AI inference trên backend, lưu sự kiện vào cơ sở dữ liệu, và gửi push notification thời gian thực qua Firebase Cloud Messaging tới app Flutter.\n- Thiết kế có thể đóng gói bằng Docker để triển khai trên server hoặc thiết bị biên.\n\nCông nghệ:\nPython, YOLO (object detection), Multi-Object Tracking (MOT), OpenCV, Flask/FastAPI, Flutter, Firebase (FCM), Docker\n\nLink:\nCode & tài liệu: https://github.com/khanhbes/Violation-Detect"
+    "details": "Overview:\nAutomated traffic monitoring system identifying violations (red-light breaches, missing helmets) by combining deep object detection and multi-object tracking.\n\nKey Highlights:\n- Automated spatial zone calibration to define stop lines and violation thresholds.\n- Multiple-Object Tracking (MOT) to ensure consistent vehicle tracking across continuous video streams.\n- Real-time event notifications delivered to Flutter mobile clients via Firebase Cloud Messaging.\n\nTech Stack:\nPython, YOLO, MOT / ByteTrack, OpenCV, FastAPI, Flutter, Firebase (FCM), Docker\n\nRepository:\nhttps://github.com/khanhbes/Violation-Detect"
   },
   {
     "name": "EV Battery Health & Telemetry System",
-    "desc": "Battery telemetry and health analytics app for VinFast Feliz Neo 2025. Mobile UI in Flutter, custom hardware interfacing to collect SOC/SOH, and visualization for charging predictions.",
+    "desc": "Battery analytics and telemetry monitoring application for electric two-wheelers with real-time visualization and charging state predictions in Flutter.",
     "image": "vinfast-battery",
-    "category": "iot",
+    "category": "embedded",
+    "badge": "Mobile & Analytics",
+    "tags": ["Flutter", "Dart", "CAN-Bus", "C/C++", "Analytics"],
     "links": {
       "view": "./vinfast-battery/",
       "code": "https://github.com/khanhbes/Vinfast-Batery"
     },
-    "details": "Giới thiệu:\nGiải pháp theo dõi telemetry và phân tích sức khỏe pin dành cho xe máy điện VinFast Feliz Neo 2025. Gồm module phần cứng đọc dữ liệu từ hệ thống BMS, kênh truyền dữ liệu đến backend và giao diện di động để trực quan hóa và cảnh báo.\n\nĐiểm nổi bật kỹ thuật:\n- Giao tiếp phần cứng tùy chỉnh (ví dụ: CAN/Serial) để thu thập thông số SOH, SOC, điện áp ô tô, và dữ liệu chu kỳ sạc.\n- Phân tích sức khỏe pin và dự đoán chu kỳ sạc bằng các phương pháp thống kê/heuristic; cảnh báo khi phát hiện bất thường về nhiệt độ hoặc suy giảm hiệu năng.\n- Ứng dụng di động Flutter với biểu đồ thời gian thực, lịch sử telemetry và thông báo tức thì khi xảy ra bất thường.\n- Thiết kế hỗ trợ đồng bộ hoá dữ liệu trên nền tảng cloud hoặc lưu cục bộ khi ngoại tuyến.\n\nCông nghệ:\nFlutter, Dart, Embedded firmware (C/C++), MQTT/HTTP, Firebase/SQLite, Python cho phân tích dữ liệu\n\nLink:\nCode & tài liệu: https://github.com/khanhbes/Vinfast-Batery"
+    "details": "Overview:\nComprehensive mobile telemetry and battery analytics platform designed for electric vehicle fleet diagnostics and predictive charging.\n\nKey Highlights:\n- Embedded interface reading State of Health (SOH), State of Charge (SOC), and cell balancing data.\n- Real-time charging cycle predictions and anomaly alerting.\n- Intuitive Flutter dashboard featuring live telemetry graphs and performance diagnostics.\n\nTech Stack:\nFlutter, Dart, Embedded C/C++, MQTT/HTTP, SQLite, Python Analytics\n\nRepository:\nhttps://github.com/khanhbes/Vinfast-Batery"
   }
 ]

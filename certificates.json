@@ -1,0 +1,80 @@
+[
+  {
+    "id": "cert-1",
+    "title": "Deep Learning Specialization",
+    "issuer": "DeepLearning.AI & Coursera",
+    "date": "2024",
+    "credentialId": "DL-AI-2024-8849",
+    "category": "ai",
+    "icon": "fas fa-brain",
+    "badgeColor": "violet",
+    "summary": "Mastered core neural network foundations, backpropagation, CNN architectures, transformer basics, and hyperparameter tuning.",
+    "skills": ["Neural Networks", "CNNs", "Optimization", "Sequence Models", "PyTorch"],
+    "verifyUrl": "https://coursera.org/verify/specialization"
+  },
+  {
+    "id": "cert-2",
+    "title": "Computer Vision & Advanced YOLO Architectures",
+    "issuer": "OpenCV & AI Research Lab",
+    "date": "2024",
+    "credentialId": "CV-YOLO-9821-X",
+    "category": "ai",
+    "icon": "fas fa-eye",
+    "badgeColor": "cyan",
+    "summary": "Specialized training on real-time object detection (YOLOv8–YOLOv12), instance segmentation, anchor-free paradigms, and ByteTrack MOT tracking algorithms.",
+    "skills": ["YOLOv12", "Instance Segmentation", "ByteTrack", "OpenCV", "TensorRT"],
+    "verifyUrl": "https://github.com/khanhbes"
+  },
+  {
+    "id": "cert-3",
+    "title": "Flutter & Dart Mobile App Engineering",
+    "issuer": "Google Developers Ecosystem",
+    "date": "2024",
+    "credentialId": "FLT-ENG-7420-VN",
+    "category": "mobile",
+    "icon": "fas fa-mobile-alt",
+    "badgeColor": "emerald",
+    "summary": "Comprehensive architecture for high-performance cross-platform mobile apps, BLoC/Provider state management, offline caching, and Firebase Cloud Messaging push notifications.",
+    "skills": ["Flutter", "Dart", "BLoC", "Firebase FCM", "Offline SQLite"],
+    "verifyUrl": "https://flutter.dev"
+  },
+  {
+    "id": "cert-4",
+    "title": "Edge AI & Mobile Tensor Processing",
+    "issuer": "TensorFlow Academy & Edge Guild",
+    "date": "2024",
+    "credentialId": "EDGE-AI-5512-TFL",
+    "category": "ai",
+    "icon": "fas fa-microchip",
+    "badgeColor": "amber",
+    "summary": "Model optimization pipeline: converting PyTorch models via ONNX to TensorFlow SavedModel and quantized float32/INT8 TensorFlow Lite for Android CPU/GPU delegates.",
+    "skills": ["TFLite", "ONNX", "Quantization", "Edge Deployment", "Android NDK"],
+    "verifyUrl": "https://tensorflow.org/lite"
+  },
+  {
+    "id": "cert-5",
+    "title": "Full-Stack AI Application Architecture",
+    "issuer": "Cloud & AI Systems Institute",
+    "date": "2023",
+    "credentialId": "FSAI-9932-SYS",
+    "category": "backend",
+    "icon": "fas fa-server",
+    "badgeColor": "blue",
+    "summary": "Architected low-latency AI backends with FastAPI and Flask, asynchronous WebSocket streaming for continuous video frames, Docker containerization, and RESTful APIs.",
+    "skills": ["FastAPI", "Flask", "Docker", "WebSockets", "Linux"],
+    "verifyUrl": "https://github.com/khanhbes"
+  },
+  {
+    "id": "cert-6",
+    "title": "Professional English Fluency & Academic Writing",
+    "issuer": "ETOP English Center & Academic Cert",
+    "date": "2023",
+    "credentialId": "ENG-PROF-75-ETOP",
+    "category": "language",
+    "icon": "fas fa-certificate",
+    "badgeColor": "rose",
+    "summary": "Advanced communicative fluency and scientific English proficiency. Served as an English tutor at ETOP English Center, mentoring university and high school students.",
+    "skills": ["Technical Writing", "Academic Presentation", "Tutoring", "Fluent Communication"],
+    "verifyUrl": "https://github.com/khanhbes"
+  }
+]
